@@ -1,29 +1,52 @@
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.sql.Array;
+import java.util.LinkedList;
+
+
+//
+// 3. Реализовать алгоритм пирамидальной сортировки (HeapSort).
+//        На шахматной доске расставить 8 ферзей так, чтобы они не били друг друга.
+//        Формат сдачи: файл с расширением java или ссылка на гит с подписанными ФИ и номером группы.
 public class Main {
     public static void main(String[] args) {
-//    Почему-то не работает сканнер, пришлось указать n самой
-//    Scanner in = new Scanner(System.in);
-//    System.out.printf('n: ');
-//    int n = in.nextInt();
-//    in.close();
-        int n = 10;
-//        First first = new First();
-//        int [] array = First.RandomArray(n);
-//        First.mergeSort(array,n);
-//        System.out.println(Arrays.toString(first.RandomArray(n)));
-//        System.out.println(Arrays.toString(array));
+//        Задание 1:
+        String names = "Иван Иванов\n" +
+                "Светлана Петрова\n" +
 
-//        Second second = new Second();
-//        ArrayList<Integer> arrayList = new ArrayList<>(second.RandomArray(n));
-//        System.out.println(second.DeleteEvens(arrayList));
+//                "Кристина Белова\n" +
+//
+//                "Анна Мусина\n" +
+//
+//                "Анна Крутова\n" +
+//
+//                "Иван Юрин\n" +
+//
+//                "Петр Лыков\n" +
+//
+//                "Павел Чернов\n" +
+//
+//                "Петр Чернышов\n" +
+//
+//                "Мария Федорова\n" +
+//
+//                "Марина Светлова\n" +
+//
+//                "Мария Савина\n" +
+//
+//                "Мария Рыкова\n" +
+//
+//                "Марина Лугова\n" +
+//
+//                "Анна Владимирова\n" +
+//
+//                "Иван Мечников\n" +
+//
+//                "Петр Петин\n" +
 
-        Third third = new Third();
-        ArrayList<Integer> arrayList = new ArrayList<>(third.RandomArray(n));
-        System.out.println(arrayList);
-        System.out.println(Arrays.toString(third.Minimum((arrayList))));
-
-
+                "Иван Ежов";
+        LinkedList list = FirstTask.ListFromString(names);
+        System.out.println(list.toString());
+        LinkedList namesPhones = FirstTask.CreatePhoneBook(list);
+        System.out.println(namesPhones.toString());
 
     }
 }
