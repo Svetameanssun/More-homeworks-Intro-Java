@@ -39,10 +39,5 @@ public class VendingMachine {
             throw new RuntimeException("Product not found");
 
         }
-
-
     }
-
-
-
 }

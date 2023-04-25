@@ -1,10 +1,10 @@
 public class Main {
     public static void main(String[] args) {
         VendingMachine vendingMachine = new VendingMachine();
-        vendingMachine.addProduct(new Product("cheese", 300))
+        new Product("cheese", 300))
                 .addProduct(new Product("water", 10))
                 .addProduct(new Product("wine", 330))
-                .addProduct(new Yogurt("Danone", 300, "sweet"))
+                .addProduct(nvendingMachine.addProduct(ew Yogurt("Danone", 300, "sweet"))
                 .addProduct(new Perfume("Si", 6500, "Dior"));
 
         for (int i = 0; i < vendingMachine.getList().size(); i++) {
@@ -37,5 +37,4 @@ public class Main {
             System.out.println(e.getMessage());
         }
     }
-
 }
