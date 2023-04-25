@@ -1,52 +1,79 @@
 public class Laptop {
-    public String getRam() {
-        return ram;
-    }
+    private final String brand;
+    private int ram;
+    private String typeDrive;
+    private int HDD;
+    private final String color;
+    private String operationSystem;
+    private final int sizeDisplay;
 
-    public String getMemory() {
-        return memory;
-    }
-
-    public String getOS() {
-        return OS;
-    }
-
-    public String getColour() {
-        return colour;
-    }
-
-    public String getCost() {
-        return cost;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    private String id;
-    private String ram;
-    private String memory;
-    private String OS;
-    private String colour;
-
-    public void setCost(String cost) {
-        this.cost = cost;
-    }
-
-    private String cost;
-
-    public Laptop(String id, String OS,String memory,String ram,String colour,String cost){
-        this.id = id;
-        this.OS = OS;
-        this.memory = memory;
+    public Laptop(String brand, int ram,
+                    int sizeDisplay, int HDD, String typeDrive,
+                    String operationSystem, String color) {
+        this.brand = brand;
         this.ram = ram;
-        this.colour = colour;
-        this.cost = cost;
+        this.typeDrive = typeDrive;
+        this.HDD = HDD;
+        this.color = color;
+        this.operationSystem = operationSystem;
+        this.sizeDisplay = sizeDisplay;
+    }
 
+    public Laptop(String brand, int ram, int sizeDisplay) {
+        this(brand, ram,
+                sizeDisplay, 512, "SDD",
+                "Windows 10", "White");
     }
 
     @Override
     public String toString() {
-        return String.format("%s, %s, %s, %s, %s, %s",id,OS,memory,ram,colour,cost);
+        return  String.format("Laptop  { brand = %-8s ram = %-5d\ttypeDrive = %s\tHDD = %d\tcolor = %s\toperationSystem = %-10sizeDisplay = %d}",brand, ram, typeDrive, HDD, color, operationSystem, sizeDisplay);
+
     }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public int getRam() {
+        return ram;
+    }
+
+    public int getSizeDisplay() {
+        return sizeDisplay;
+    }
+
+    public int getValueHDD() {
+        return HDD;
+    }
+
+    public String getTypeDrive() {
+        return typeDrive;
+    }
+
+    public String getOperationSystem() {
+        return operationSystem;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setRam(int ram) {
+        this.ram = ram;
+    }
+
+    public void setValueHDD(int valueHDD) {
+        this.HDD = HDD;
+    }
+
+    public void setTypeDrive(String typeDrive) {
+        this.typeDrive = typeDrive;
+    }
+
+    public void setOperationSystem(String operationSystem) {
+        this.operationSystem = operationSystem;
+    }
+
+
 }

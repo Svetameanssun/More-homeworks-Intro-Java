@@ -1,40 +1,37 @@
-package HW_Java_6;
-
 import java.util.*;
-import java.util.Map.Entry;
 
 public class Shop {
     /**
      * Критерии по которым выбираем ноутбук
      */
-    private String[] items = {"Ram", "sizeDisplay", "valueDrive", "operationSystem"};
+    private String[] items = {"Ram", "sizeDisplay", "H", "operationSystem"};
 
-    HashSet<Notebook> notebooks = new HashSet<>();
+    HashSet<Laptop> laptops = new HashSet<>();
 
     @Override
     public String toString() {
         return "Shop {" +
-                " notebooks=" + notebooks +
+                " laptops=" + laptops +
                 '}';
     }
 
     /**
      *
-     * @param notebook экземпляр класса Ноутбук
+     * @param  laptop класса Laptop
      * @return Возращает HashSet с ноутбуками
      */
-    public Shop addNotebook(Notebook notebook){
-        notebooks.add(notebook);
+    public Shop addLaptop(Laptop laptop){
+        laptops.add(laptop);
         return this;
     }
 
     /**
-     * выводит на консоль все ноутбуки
+     * выводит в консоль все ноутбуки
      * @return Возращает HashSet с ноутбуками
      */
-    public Shop showNoteBooks(){
-        for (Notebook notebook : notebooks) {
-            System.out.println(notebook);
+    public Shop showLaptops(){
+        for (Laptop laptop : laptops) {
+            System.out.println(laptop);
         }
         return this;
     }
@@ -83,29 +80,29 @@ public class Shop {
      * @param points указываем нобор ключ-значение Map<String, Object> points
      * @return Возвращает сет с перечнем ноутбуков которые удовлетворяют требованиям
      */
-    public HashSet<Notebook> findNotebooks2(Map<String, Object> points){
-        HashSet<Notebook> foundNotebooks = new HashSet<>();
-        Iterator<Notebook> iterator = notebooks.iterator();
+    public HashSet<Laptop> findLaptops2(Map<String, Object> points){
+        HashSet<Laptop> foundLaptops = new HashSet<>();
+        Iterator<Laptop> iterator = laptops.iterator();
         while(iterator.hasNext()){
-            Notebook notebook = iterator.next();
+            Laptop laptop = iterator.next();
 
-            if(notebook.getRam()>=(Integer)points.get(items[0])
-                    && notebook.getSizeDisplay()>=(Integer)points.get(items[1])
-                    && notebook.getValueHDD()>=(Integer)points.get(items[2])
-                    && notebook.getOperationSystem().equals(points.get(items[3]))){
-                foundNotebooks.add(notebook);
+            if(laptop.getRam()>=(Integer)points.get(items[0])
+                    && laptop.getSizeDisplay()>=(Integer)points.get(items[1])
+                    && laptop.getValueHDD()>=(Integer)points.get(items[2])
+                    && laptop.getOperationSystem().equals(points.get(items[3]))){
+                foundLaptops.add(laptop);
             }
         }
-        return foundNotebooks;
+        return foundLaptops;
     }
 
     /**
      * Выводит на консоль все ноутбуки которые  выбраны по фильтру
-     * @param findNotebooks передаем сет с ноутбуками
+     * @param findLaptops передаем сет с ноутбуками
      */
-    public void showfoundNotebooks(HashSet<Notebook> findNotebooks){
-        for (Notebook notebook : findNotebooks) {
-            System.out.println(notebook);
+    public void showFoundLaptops(HashSet<Laptop> findLaptops){
+        for (Laptop laptop : findLaptops) {
+            System.out.println(laptop);
         }
     }
 
