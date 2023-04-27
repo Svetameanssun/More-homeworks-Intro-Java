@@ -16,7 +16,7 @@ public class Main {
                 .addLaptop(new Laptop("LENOVO", 16, 15, 1024,  "SSD", "Linux",   "White"));
 
         shop.showLaptops();
-        HashMap<String, Object> filters = shop.askPointsFilter();
+        HashMap<String, Object> filters = shop.minFeatures();
         System.out.println(filters);
 
         HashSet<Laptop> foundLaptop = shop.findLaptops2(filters);
